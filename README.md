@@ -18,7 +18,7 @@ A simple **React-based website for hiring tools and equipment**, allowing custom
 4. When a user clicks a tool, they are redirected to our **WhatsApp** 
 ```
 5. The message is sent directly to the business WhatsApp number.
-
+```
 ## Technologies Used
 
 * **React.js**
@@ -29,19 +29,6 @@ A simple **React-based website for hiring tools and equipment**, allowing custom
 
 ## Project Structure
 
-## Installation
-
-Clone the repository:
-
-```
-git clone https://github.com/YOUR_USERNAME/tool-hire-website.git
-```
-
-Navigate into the project:
-
-```
-cd tool-hire-website
-```
 
 
 ## Future Improvements
