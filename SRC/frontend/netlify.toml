@@ -1,9 +1,0 @@
-[build]
-  base = "src/frontend"   # path to your frontend folder
-  publish = "build"       # React build output
-  command = "npm run build"
-
-  [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
