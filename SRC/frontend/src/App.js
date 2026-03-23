@@ -11,7 +11,7 @@ function App() {
 
   // Fetch tools from backend
   useEffect(() => {
-    fetch("https://elite-hire-backend.onrender.com/tools")
+    fetch("https://elite-hire-backend.onrender.com/api/tools")
       .then(res => res.json())
       .then(data => {
         setTools(data);
