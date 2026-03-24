@@ -30,10 +30,25 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>ELITE HIRE</h1>
-        <p>Your Trusted Partner for Project Equipment</p>
-      </header>
+      <header className="header">
+  <div className="header-content">
+
+    {/* LOGO */}
+    <img 
+      src="/images/logo.png" 
+      alt="Elite Hire Logo" 
+      className="logo"
+    />
+
+    {/* TEXT */}
+    <div className="header-text">
+      <h1>ELITE HIRE</h1>
+      <h2>TOOLS & EQUIPMENT</h2>
+      <p>Your Trusted Partner for Project Equipment</p>
+    </div>
+
+      </div>
+    </header>
 
       <section className="controls">
         <input

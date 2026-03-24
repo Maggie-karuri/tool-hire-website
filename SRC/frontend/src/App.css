@@ -1,21 +1,67 @@
+/* GENERAL */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f9f9f9;
 }
 
-header {
-  background: #111;
-  color: white;
-  text-align: center;
+/* HEADER */
+.header {
+  background: white;
   padding: 20px;
+  border-bottom: 3px solid #fca311;
 }
 
-header h1 {
-  color: orange;
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.header-text h1 {
   margin: 0;
+  color: orange;
+  font-size: 28px;
+  font-weight: bold;
 }
 
+.header-text h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background: #fff;
+}
+
+.controls input,
+.controls select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TOOLS GRID */
 .tools-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -23,79 +69,83 @@ header h1 {
   padding: 30px;
 }
 
-.price {
-  display: inline-block;
-  margin-top: 10px;
-  background: orange;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-}
-
-.contact {
-  background: orange;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
+/* CARD */
 .card {
-  background: white;
+  background: #fff;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  border: 1px solid #eee;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
+
+/* IMAGE */
 .card img {
   width: 100%;
   height: 140px;
-  object-fit: cover;
+  object-fit: contain; /* ensures full image is visible */
+  background: #fafafa;
   border-radius: 6px;
 }
-.hire-btn{
-  margin-top:10px;
-  padding:8px 12px;
-  background:#25D366;
-  border:none;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-}
-.controls{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:20px;
-  flex-wrap:wrap;
+
+/* TOOL NAME */
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #222;
 }
 
-.controls input{
-  padding:10px;
-  width:250px;
-  border-radius:6px;
-  border:1px solid #ccc;
+/* DESCRIPTION */
+.card p {
+  font-size: 13px;
+  color: #666;
 }
 
-.controls select{
-  padding:10px;
-  border-radius:6px;
-  border:1px solid #ccc;
+/* PRICE BADGE */
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  background: #fca311;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
-.no-results{
-  text-align:center;
-  font-size:18px;
-  color:#777;
+/* CONTACT SECTION */
+.contact {
+  background: linear-gradient(
+    to right,
+    #000 30%,
+    #fca311 70%
+  );
+  color: white;
+  text-align: left;
+  padding: 30px;
+  font-size: 18px;
+}
+
+.contact h2 {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  color: white;
+  text-align: left;
+  padding: 15px;
+}
+
+/* NO RESULTS */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
 }
