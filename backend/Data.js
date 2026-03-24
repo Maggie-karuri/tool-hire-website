@@ -5,7 +5,6 @@ const tools = [
     name: "Cordless Drill",
     category: "Construction",
     description: "For creating holes or driving screws and fasteners",
-    price: "KSh 1500/day",
     image: "/images/cordless-drill.jpeg"
   },
   {
@@ -13,7 +12,6 @@ const tools = [
     name: "Generator",
     category: "Power",
     description: "6.5 KVA generator",
-    price: "KSh 1500/day",
     image: "/images/generator.jpeg"
   },
   {
@@ -21,7 +19,6 @@ const tools = [
     name: "Electric Hoist",
     category: "Electrical",
     description: "Lift, lower, and transport heavy materials",
-    price: "KSh 1000/day",
     image: "/images/electric-hoist.jpeg"
   },
   {
@@ -29,7 +26,6 @@ const tools = [
     name: "Circular Saw",
     category: "Carpentry",
     description: "Precision cutting saw",
-    price: "KSh 1000/day",
     image: "/images/circular-saw.jpeg"
   },
   {
@@ -37,7 +33,6 @@ const tools = [
     name: "Grinder",
     category: "Metal",
     description: "230mm powerful grinder",
-    price: "KSh 1000/day",
     image: "/images/grinder.jpeg"
   },
   {
@@ -45,7 +40,6 @@ const tools = [
     name: "Cordless Saw",
     category: "Carpentry",
     description: "Ideal for cutting wood, plastic, or metal",
-    price: "KSh 1500/day",
     image: "/images/cordless-saw.jpeg"
   },
   {
@@ -53,7 +47,6 @@ const tools = [
     name: "Drill",
     category: "Carpentry",
     description: "For creating holes or driving screws",
-    price: "KSh 1500/day",
     image: "/images/drill.jpeg"
   },
   {
@@ -61,7 +54,6 @@ const tools = [
     name: "Extension Cord",
     category: "Construction",
     description: "Provides extended power supply",
-    price: "KSh 200/day",
     image: "/images/extension-cable.jpeg"
   },
   {
@@ -69,7 +61,6 @@ const tools = [
     name: "Heat Gun",
     category: "Construction",
     description: "Used for stripping paint and bending plastics",
-    price: "KSh 1500/day",
     image: "/images/heat-gun.jpeg"
   },
   {
@@ -77,7 +68,6 @@ const tools = [
     name: "Hollow Block Machine",
     category: "Construction",
     description: "Good quality hollow block molds",
-    price: "KSh 1000/day",
     image: "/images/hollow-block-machine.jpeg"
   },
   {
@@ -85,7 +75,6 @@ const tools = [
     name: "Makinga Machine",
     category: "Construction",
     description: "Concrete block making machine",
-    price: "KSh 1500/day",
     image: "/images/makinga-machine.jpeg"
   },
   {
@@ -93,7 +82,6 @@ const tools = [
     name: "Marble Cutter",
     category: "Construction",
     description: "Precision cutting of marble and tiles",
-    price: "KSh 1500/day",
     image: "/images/marble-cutter.jpeg"
   },
   {
@@ -141,7 +129,6 @@ const tools = [
     name: "PPR Pipe Cutter",
     category: "Construction",
     description: "Cuts PPR pipes accurately",
-    price: "KSh 1500/day",
     image: "/images/ppr-pipe-cutter.jpeg"
   },
   {
@@ -149,7 +136,6 @@ const tools = [
     name: "Riveter",
     category: "Construction",
     description: "Fastens materials together",
-    price: "KSh 100/day",
     image: "/images/riveter.jpeg"
   },
   {
@@ -157,7 +143,6 @@ const tools = [
     name: "Sander",
     category: "Construction",
     description: "Smoothens surfaces",
-    price: "KSh 1500/day",
     image: "/images/sander.jpeg"
   },
   {
@@ -165,7 +150,6 @@ const tools = [
     name: "Staple Gun",
     category: "Construction",
     description: "Used to fasten materials",
-    price: "KSh 1500/day",
     image: "/images/staple-gun.jpeg"
   },
   {
@@ -173,7 +157,6 @@ const tools = [
     name: "Wall Chaser",
     category: "Construction",
     description: "Cuts channels into walls",
-    price: "KSh 1500/day",
     image: "/images/wall-chaser.jpeg"
   },
   {
@@ -181,7 +164,6 @@ const tools = [
     name: "Welding Machine",
     category: "Metal",
     description: "Used for welding metals",
-    price: "KSh 1500/day",
     image: "/images/welding-machine.jpeg"
   },
   {
@@ -189,7 +171,6 @@ const tools = [
     name: "Wood Planer",
     category: "Carpentry",
     description: "Smoothens and flattens wood",
-    price: "KSh 1500/day",
     image: "/images/wood-planer.jpeg"
   }
 ];

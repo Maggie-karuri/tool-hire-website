@@ -35,7 +35,7 @@ function App() {
 
     {/* LOGO */}
     <img 
-      src="/images/logo.png" 
+      src="/images/logo.jpeg" 
       alt="Elite Hire" 
       className="logo"
     />
