@@ -6,6 +6,7 @@ const tools = [
     category: "Construction",
     description: "For creating holes or driving screws and fasteners",
     image: "/images/cordless-drill.jpeg"
+    
   },
   {
     id: 2,
