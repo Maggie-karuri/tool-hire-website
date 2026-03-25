@@ -72,11 +72,13 @@ body {
 /* CARD */
 .card {
   background: #fff;
+  
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   border: 1px solid #eee;
   transition: 0.3s;
+  
 }
 
 .card:hover {
@@ -107,15 +109,16 @@ body {
   color: #666;
 }
 
-/* PRICE BADGE */
-.price {
-  display: inline-block;
+.inquire-btn {
   margin-top: 10px;
-  background: #fca311;
+  padding: 10px;
+  background: #25D366;
   color: white;
-  padding: 5px 12px;
+  border: none;
   border-radius: 20px;
   font-weight: bold;
+  cursor: pointer;
+  width: 100%;
 }
 
 /* CONTACT SECTION */

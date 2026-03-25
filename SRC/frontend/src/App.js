@@ -15,41 +15,62 @@ function App() {
       .then(res => res.json())
       .then(data => {
         setTools(data);
-        const cats = ["All", ...new Set(data.map(tool => tool.category))];
+
+        // Handle categories (supports array or string)
+        const cats = [
+          "All",
+          ...new Set(
+            data.flatMap(tool =>
+              Array.isArray(tool.category)
+                ? tool.category
+                : [tool.category]
+            )
+          )
+        ];
+
         setCategories(cats);
       })
       .catch(err => console.error("Error fetching tools:", err));
   }, []);
 
-  // Filter tools by search & category
+  // Filter tools
   const filteredTools = tools.filter(tool => {
-    const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = category === "All" || tool.category === category;
+    const matchesSearch = tool.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchesCategory =
+      category === "All" ||
+      (Array.isArray(tool.category)
+        ? tool.category.includes(category)
+        : tool.category === category);
+
     return matchesSearch && matchesCategory;
   });
 
   return (
     <div className="App">
+
+      {/* HEADER */}
       <header className="header">
-  <div className="header-content">
+        <div className="header-content">
+          
+          <img
+            src="/images/logo.png"
+            alt="Elite Hire"
+            className="logo"
+          />
 
-    {/* LOGO */}
-    <img 
-      src="/images/logo.jpeg" 
-      alt="Elite Hire" 
-      className="logo"
-    />
+          <div className="header-text">
+            <h1>ELITE HIRE</h1>
+            <h2>TOOLS & EQUIPMENT</h2>
+            <p>Your Trusted Partner for Project Equipment</p>
+          </div>
 
-    {/* TEXT */}
-    <div className="header-text">
-      <h1>ELITE HIRE</h1>
-      <h2>TOOLS & EQUIPMENT</h2>
-      <p>Your Trusted Partner for Project Equipment</p>
-    </div>
+        </div>
+      </header>
 
-      </div>
-    </header>
-
+      {/* SEARCH + FILTER */}
       <section className="controls">
         <input
           type="text"
@@ -63,28 +84,44 @@ function App() {
           onChange={(e) => setCategory(e.target.value)}
         >
           {categories.map((cat, index) => (
-            <option key={index} value={cat}>{cat}</option>
+            <option key={index} value={cat}>
+              {cat}
+            </option>
           ))}
         </select>
       </section>
 
+      {/* TOOLS */}
       <section className="tools-container">
         {filteredTools.length > 0 ? (
-          filteredTools.map(tool => <ToolCard key={tool.id} tool={tool} />)
+          filteredTools.map(tool => (
+            <ToolCard key={tool.id} tool={tool} />
+          ))
         ) : (
           <p className="no-results">No tools found</p>
         )}
       </section>
+        <section className="contact">
+  <div className="contact-left">
+    📞 Contact Us to Book<br />
+    0727 291 734
+  </div>
 
-      <section className="contact">
-        <h2>Contact Us to Book</h2>
-        <p>0727 291 734</p>
-        <p>Kangema</p>
-      </section>
+  <div className="contact-center">
+    📍 Kangema
+  </div>
 
+  <div className="contact-right">
+    ELITE HIRENOW
+  </div>
+</section>
+
+
+      {/* FOOTER */}
       <footer>
         <p>© 2026 Elite Hire Tools</p>
       </footer>
+
     </div>
   );
 }

@@ -1,93 +1,55 @@
-/* General body */
+/* GENERAL */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fefefe; 
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+  background: white;
+  padding: 20px;
+  border-bottom: 3px solid #fca311;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 70px;
+}
+
+.header-text h1 {
+  margin: 0;
+  color: #fca311;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 18px;
   color: #333;
 }
 
-/* Header */
-header {
-  background: #111;     
-  color: white;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.header-text p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
 }
 
-header h1 {
-  color: #fca311; 
-  margin: 0;
-}
-
-/* Tools container */
-.tools-container {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: center;
-  gap: 20px;
-  padding: 30px;
-  background: #f4f4f4; 
-}
-/* Individual cards */
-.card {
-  background: white;
-  width: 250px;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Card image */
-.card img {
-  width: 100%;
-  height: 160px;        
-  object-fit: contain;    
-  border-radius: 6px;
-  background: #f9f9f9;   
-}
-
-/* Price badge */
-.price {
-  display: inline-block;
-  margin-top: 10px;
-  background: #fca311;  
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-/* Hire button */
-.hire-btn {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #25D366;
-  border: none;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.hire-btn:hover {
-  background: #1ebe5d;
-}
-
+/* CONTROLS */
 .controls {
   display: flex;
   justify-content: center;
   gap: 15px;
   padding: 20px;
   flex-wrap: wrap;
+  background: #fff;
 }
 
 .controls input,
@@ -97,24 +59,115 @@ header h1 {
   border: 1px solid #ccc;
 }
 
-/* Contact section */
-.contact {
-  background: #fca311;
-  color: white;
-  text-align: center;
+/* TOOLS GRID */
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   padding: 30px;
-  font-weight: bold;
 }
 
-/* Footer */
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain; /* VERY IMPORTANT (no zoom) */
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+/* TOOL NAME */
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #222;
+}
+
+/* DESCRIPTION */
+.card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* WHATSAPP BUTTON */
+.inquire-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: #25D366;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.inquire-btn:hover {
+  background: #1ebe5d;
+}
+
+/* CONTACT SECTION */
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+
+  background: linear-gradient(
+    to right,
+    #000 30%,
+    #fca311 70%
+  );
+
+  color: white;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.contact-left {
+  text-align: left;
+}
+
+/* CENTER */
+.contact-center {
+  text-align: center;
+  color: black;
+}
+
+/* RIGHT */
+.contact-right {
+  text-align: right;
+  font-size: 20px;
+}
+
+/* FOOTER */
 footer {
-  background: #111;
+  background: black;
   color: white;
   text-align: center;
-  padding: 15px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 12px;
 }
 
+/* NO RESULTS */
 .no-results {
   text-align: center;
   font-size: 18px;
