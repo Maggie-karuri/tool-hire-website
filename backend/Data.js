@@ -90,7 +90,6 @@ const tools = [
     name: "Mason Hammer",
     category: "Construction",
     description: "For cutting and trimming brick or stone",
-    price: "KSh 1500/day",
     image: "/images/mason-hammer.jpeg"
   },
   {
@@ -98,7 +97,6 @@ const tools = [
     name: "Muttock",
     category: "Construction",
     description: "For breaking up hard ground",
-    price: "KSh 50/day",
     image: "/images/muttock.jpeg"
   },
   {
@@ -106,7 +104,6 @@ const tools = [
     name: "Laser Level",
     category: "Construction",
     description: "For leveling over long distances",
-    price: "KSh 1500/day",
     image: "/images/laser-level.jpeg"
   },
   {
@@ -114,7 +111,6 @@ const tools = [
     name: "Pipe Wrench",
     category: "Construction",
     description: "For plumbing and mechanical work",
-    price: "KSh 100/day",
     image: "/images/pipe-wrench.jpeg"
   },
   {
@@ -122,7 +118,6 @@ const tools = [
     name: "PPR Machine",
     category: "Construction",
     description: "For joining PPR pipes",
-    price: "KSh 1000/day",
     image: "/images/ppr-machine.jpeg"
   },
   {
