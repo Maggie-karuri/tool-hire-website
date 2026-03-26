@@ -129,7 +129,7 @@ body {
     #fca311 70%
   );
   color: white;
-  text-align: left;
+  text-align: center;
   padding: 30px;
   font-size: 18px;
 }
@@ -142,7 +142,7 @@ body {
 footer {
   background: black;
   color: white;
-  text-align: left;
+  text-align: center;
   padding: 15px;
 }
 

@@ -11,22 +11,20 @@ function ToolCard({ tool }) {
     window.open(whatsappURL, "_blank");
   };
 
-  return (
-    <div className="card">
-  <img
-    className="tool-image"
-    src={`/images/${tool.image}`}
-    alt={tool.name}
-  />
-  <h3>{tool.name}</h3>
-  <p>{tool.description}</p>
-
-  <div className="card"></div>
-  <button className="inquire-btn" onClick={handleClick}>
-  💬 Hire / Get Price
-  </button>
-</div>
-  );
+ return (
+  <div className="card">
+    <img
+      className="tool-image"
+      src={`/images/${tool.image}`}
+      alt={tool.name}
+    />
+    <h3>{tool.name}</h3>
+    <p>{tool.description}</p>
+    <button className="inquire-btn" onClick={handleClick}>
+      💬 Hire / Get Price
+    </button>
+  </div>
+);
 }
 
 export default ToolCard;

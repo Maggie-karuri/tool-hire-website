@@ -51,24 +51,17 @@ function App() {
   return (
     <div className="App">
 
-      {/* HEADER */}
-      <header className="header">
-        <div className="header-content">
-          
-          <img
-            src="/images/logo.png"
-            alt="Elite Hire"
-            className="logo"
-          />
+    <header className="header">
+      <div className="logo-card">
+      <img src="./images/logo.jpeg" alt="Elite Hire Logo" />
+      </div>
 
-          <div className="header-text">
-            <h1>ELITE HIRE</h1>
-            <h2>TOOLS & EQUIPMENT</h2>
-            <p>Your Trusted Partner for Project Equipment</p>
-          </div>
-
-        </div>
-      </header>
+      <div className="header-text">
+        <h1>ELITE HIRE</h1>
+        <h2>TOOLS & EQUIPMENT</h2>
+        <p>"Your Trusted Partner for All Project Equipment"</p>
+      </div>
+  </header>
 
       {/* SEARCH + FILTER */}
       <section className="controls">
