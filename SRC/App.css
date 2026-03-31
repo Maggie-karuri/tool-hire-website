@@ -20,7 +20,7 @@ body {
 }
 
 .logo {
-  width: 70px;
+  width: 30px;
   
 }
 logo-card {
@@ -32,8 +32,8 @@ logo-card {
 
 /* LOGO IMAGE */
 .logo-card img {
-  width: 80px;
-  height: auto;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 

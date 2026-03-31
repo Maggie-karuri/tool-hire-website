@@ -20,10 +20,14 @@ function ToolCard({ tool }) {
     />
     <h3>{tool.name}</h3>
     <p>{tool.description}</p>
-    <button className="inquire-btn" onClick={handleClick}>
+    <button 
+      className="inquire-btn" 
+      onClick={handleClick}
+      title="💬 Hire / Get Price"
+    >
       💬 Hire / Get Price
     </button>
-  </div>
+      </div>
 );
 }
 

@@ -53,7 +53,7 @@ function App() {
 
     <header className="header">
       <div className="logo-card">
-      <img src="./images/logo.jpeg" alt="Elite Hire Logo" />
+      <img src="/images/logo.jpeg" alt="Elite Hire" className="logo"/>
       </div>
 
       <div className="header-text">

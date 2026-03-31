@@ -20,11 +20,15 @@ body {
   text-align: left;
 }
 
-.logo {
-  width: 80px;
-  height: auto;
+.logo-card {
+  width: 60px;
+  height: 60px;
 }
-
+.logo {
+  
+  width: 50px;
+  height: 50px;
+}
 .header-text h1 {
   margin: 0;
   color: orange;
@@ -110,15 +114,19 @@ body {
 }
 
 .inquire-btn {
+  display: block;
   margin-top: 10px;
-  padding: 10px;
-  background: #25D366;
+  padding: 10px 15px;
+  background-color: #25D366;
   color: white;
   border: none;
-  border-radius: 20px;
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
-  width: 100%;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
 }
 
 /* CONTACT SECTION */
