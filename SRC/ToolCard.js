@@ -12,21 +12,24 @@ function ToolCard({ tool }) {
   };
 
  return (
-  <div className="card">
-    <img
-      className="tool-image"
-      src={`/images/${tool.image}`}
-      alt={tool.name}
-    />
-    <h3>{tool.name}</h3>
-    <p>{tool.description}</p>
-    <button 
-      className="inquire-btn" 
-      onClick={handleClick}
-      title="💬 Hire / Get Price"
-    >
-      💬 Hire / Get Price
-    </button>
+    <div style={{
+      border: "2px solid red",
+      padding: "10px",
+      margin: "10px",
+      background: "white"
+    }}>
+      <img
+        src={`/images/${tool.image}`}
+        alt={tool.name}
+        style={{ width: "100%", height: "120px", objectFit: "contain" }}
+      />
+
+      <h3>{tool.name}</h3>
+      <p>{tool.description}</p>
+
+      <button onClick={handleClick}>
+        TEST BUTTON 💬
+      </button>
       </div>
 );
 }
