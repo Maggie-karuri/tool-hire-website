@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const tools = require("./Data");
+const path = require("path");
+const multer = require("multer");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
 //Route to fetch all tools
 app.get("/api/tools", (req, res) => {
@@ -18,6 +21,16 @@ app.get("/api/tools/:category", (req, res) => {
   const filtered = tools.filter(tool => tool.category.toLowerCase() === category.toLowerCase());
   res.json(filtered);
 });
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
