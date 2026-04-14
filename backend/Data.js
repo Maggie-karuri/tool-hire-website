@@ -27,7 +27,7 @@ const tools = [
     name: "Circular Saw",
     category: "Carpentry",
     description: "Precision cutting saw",
-    image: "https://elite-hire-backend.onrender.com/uploads/oncircular-saw.jpeg"
+    image: "https://elite-hire-backend.onrender.com/uploads/circular-saw.jpeg"
   },
   {
     id: 5,
