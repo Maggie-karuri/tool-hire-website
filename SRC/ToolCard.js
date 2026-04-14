@@ -1,17 +1,15 @@
-// src/ToolCard.js
 import React from "react";
 
-const phoneNumber = "254727291734"; // Business WhatsApp number
+const phoneNumber = "254727291734"; // no + sign
 
 function ToolCard({ tool }) {
-  const handleClick = () => {
-    const message = `Hello, I am interested in hiring the ${tool.name}. Please shaare details on pricing and availability.`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, "_blank");
-  };
+  const message = `Hello, I am interested in hiring the ${tool.name}. Please share details on pricing and availability.`;
+  const encodedMessage = encodeURIComponent(message);
 
- return (
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const callURL = `tel:+${phoneNumber}`;
+
+  return (
     <div style={{
       border: "2px solid red",
       padding: "10px",
@@ -27,11 +25,41 @@ function ToolCard({ tool }) {
       <h3>{tool.name}</h3>
       <p>{tool.description}</p>
 
-      <button onClick={handleClick}>
-        TEST BUTTON 💬
-      </button>
+      <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+        
+        {/* WhatsApp Button */}
+        <button
+          onClick={() => window.location.href = whatsappURL}
+          style={{
+            backgroundColor: "#25D366",
+            color: "white",
+            border: "none",
+            padding: "8px",
+            cursor: "pointer",
+            flex: 1
+          }}
+        >
+          WhatsApp 💬
+        </button>
+
+        {/* Call Button */}
+        <button
+          onClick={() => window.location.href = callURL}
+          style={{
+            backgroundColor: "#007BFF",
+            color: "white",
+            border: "none",
+            padding: "8px",
+            cursor: "pointer",
+            flex: 1
+          }}
+        >
+          Call 📞
+        </button>
+
       </div>
-);
+    </div>
+  );
 }
 
 export default ToolCard;
