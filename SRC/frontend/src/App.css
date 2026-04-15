@@ -10,34 +10,36 @@ body {
   background: white;
   padding: 20px;
   border-bottom: 3px solid #fca311;
-  display: flex !important;
-  flex-direction: row !important;          
-  align-items: center;      
-  gap: 20px;
-  flex-wrap: nowrap;            
-}
-.header-text {
+
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  align-items: center;
+  gap: 20px;
 }
 
 /* LOGO */
 .logo-card {
-  width: auto; 
-  flex-shrink: 0;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 /* TEXT */
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .header-text h1 {
   margin: 0;
   color: #fca311;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -81,13 +83,11 @@ body {
 /* CARD */
 .card {
   background: #fff;
-  
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   border: 1px solid #eee;
   transition: 0.3s;
-  
 }
 
 .card:hover {
@@ -116,6 +116,7 @@ body {
   color: #666;
 }
 
+/* BUTTON */
 .inquire-btn {
   margin-top: 10px;
   padding: 10px;
@@ -124,44 +125,26 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
 }
 
-/* Hover effect */
 .inquire-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Click effect */
 .inquire-btn:active {
   transform: scale(0.96);
 }
 
-/* Optional: full width inside card */
-.card .inquire-btn {
-  width: 100%;
-}
-
-.card {
-  position: relative;
-  z-index: 1;
-}
-
 /* CONTACT SECTION */
 .contact {
-  background: linear-gradient(
-    to right,
-    #000 30%,
-    #fca311 70%
-  );
+  background: linear-gradient(to right, #000 30%, #fca311 70%);
   color: white;
   text-align: center;
   padding: 30px;
   font-size: 18px;
-}
-
-.contact h2 {
-  margin-bottom: 10px;
 }
 
 /* FOOTER */
