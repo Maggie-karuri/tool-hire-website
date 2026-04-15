@@ -11,7 +11,7 @@ function ToolCard({ tool }) {
 
   return (
     <div style={{
-      border: "2px solid red",
+      border: "orange",
       padding: "10px",
       margin: "10px",
       background: "white"
@@ -42,20 +42,6 @@ function ToolCard({ tool }) {
           WhatsApp 💬
         </button>
 
-        {/* Call Button */}
-        <button
-          onClick={() => window.location.href = callURL}
-          style={{
-            backgroundColor: "#007BFF",
-            color: "white",
-            border: "none",
-            padding: "8px",
-            cursor: "pointer",
-            flex: 1
-          }}
-        >
-          Call 📞
-        </button>
 
       </div>
     </div>

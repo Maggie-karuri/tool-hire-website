@@ -1,17 +1,16 @@
 import React from "react";
 
-const phoneNumber = "254727291734"; // no + sign
+const phoneNumber = "+254140983749"; 
 
 function ToolCard({ tool }) {
   const message = `Hello, I am interested in hiring the ${tool.name}. Please share details on pricing and availability.`;
   const encodedMessage = encodeURIComponent(message);
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  const callURL = `tel:+${phoneNumber}`;
-
+ 
   return (
     <div style={{
-      border: "2px solid orange",
+      border: "2px orange",
       padding: "10px",
       margin: "10px",
       background: "white"
