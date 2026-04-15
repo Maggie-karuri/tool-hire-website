@@ -6,18 +6,19 @@ body {
 }
 
 /* HEADER */
+./* HEADER */
 .header {
   background: white;
   padding: 20px;
   border-bottom: 3px solid #fca311;
-}
 
-.header-content {
+  display: flex;              /* 🔥 ADD THIS */
+  align-items: center;        /* vertical alignment */
+  gap: 20px;                  /* space between logo and text */
+}
+.header-text {
   display: flex;
-  align-items: center;     /* keeps logo + text aligned */
-  justify-content: flex-start; /* aligns everything to the left */
-  gap: 20px;               /* space between logo and text */
-  text-align: left;
+  flex-direction: column;
 }
 
 /* LOGO */
