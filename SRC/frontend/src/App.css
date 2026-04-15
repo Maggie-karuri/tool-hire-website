@@ -6,29 +6,26 @@ body {
 }
 
 /* HEADER */
-./* HEADER */
 .header {
   background: white;
   padding: 20px;
   border-bottom: 3px solid #fca311;
-
-  display: flex;              /* 🔥 ADD THIS */
-  align-items: center;        /* vertical alignment */
+  display: flex !important;
+  flex-direction: row !important;          
+  align-items: center;      
   gap: 20px;
-  flex-wrap: nowrap;                /* space between logo and text */
+  flex-wrap: nowrap;            
 }
 .header-text {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 /* LOGO */
 .logo-card {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto; 
+  flex-shrink: 0;  
 }
 
 .logo {
