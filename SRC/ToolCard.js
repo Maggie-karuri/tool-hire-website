@@ -16,7 +16,7 @@ function ToolCard({ tool }) {
       background: "white"
     }}>
       <img
-        src={`/images/${tool.image}`}
+        src={tool.image}
         alt={tool.name}
         style={{ width: "100%", height: "120px", objectFit: "contain" }}
       />
