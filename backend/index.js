@@ -53,7 +53,6 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage });
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
