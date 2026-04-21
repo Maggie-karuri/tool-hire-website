@@ -41,16 +41,7 @@ app.post("/api/tools", upload.single("image"), (req, res) => {
     image: `https://elite-hire-backend.onrender.com/uploads/${req.file.filename}`
   };
   tools.push(newTool);
-
   res.json(newTool);
-});
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
-  }
 });
 
 
