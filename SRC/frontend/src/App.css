@@ -88,6 +88,10 @@ body {
   text-align: center;
   border: 1px solid #eee;
   transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -118,8 +122,8 @@ body {
 
 /* BUTTON */
 .inquire-btn {
-  margin-top: 10px;
   padding: 10px;
+  margin-top: auto;
   background: #25D366;
   color: white;
   border: none;

@@ -12,7 +12,7 @@ const tools = [
     id: 2,
     name: "Generator",
     category: "Power",
-    description: "6.5 KVA generator",
+    description: "6.5 KVA generator: reliable, fuel-efficient power with silent operation.",
     image: "https://elite-hire-backend.onrender.com/uploads/generator.jpeg"
   },
   {

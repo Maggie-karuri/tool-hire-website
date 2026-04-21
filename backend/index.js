@@ -5,6 +5,15 @@ const path = require("path");
 const multer = require("multer");
 
 const app = express();
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+ filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+const upload = multer({storage});
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
@@ -20,6 +29,20 @@ app.get("/api/tools/:category", (req, res) => {
   const category = req.params.category;
   const filtered = tools.filter(tool => tool.category.toLowerCase() === category.toLowerCase());
   res.json(filtered);
+});
+//route to post
+app.post("/api/tools", upload.single("image"), (req, res) => {
+  const {name, category, description } = req.body;
+  const newTool = {
+    id: tools.length + 1,
+    name,
+    category,
+    description,
+    image: `https://elite-hire-backend.onrender.com/uploads/${req.file.filename}`
+  };
+  tools.push(newTool);
+
+  res.json(newTool);
 });
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {

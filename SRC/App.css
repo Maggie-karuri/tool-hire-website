@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f9f9f9;
 }
 
 /* HEADER */
@@ -10,37 +10,36 @@ body {
   background: white;
   padding: 20px;
   border-bottom: 3px solid #fca311;
-}
 
-.header-content {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
-.logo {
-  width: 30px;
-  
-}
-logo-card {
-  background: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* LOGO */
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-/* LOGO IMAGE */
-.logo-card img {
-  width: 40px;
-  height: 40px;
+.logo {
+  width: 60px;
+  height: 60px;
   object-fit: contain;
+}
+
+/* TEXT */
+.header-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .header-text h1 {
   margin: 0;
   color: #fca311;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -84,26 +83,27 @@ logo-card {
 /* CARD */
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 15px;
   text-align: center;
   border: 1px solid #eee;
   transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 /* IMAGE */
 .card img {
   width: 100%;
-  height: 140px;
-  object-fit: contain; /* VERY IMPORTANT (no zoom) */
-  background: #fafafa;
-  border-radius: 6px;
-  padding: 5px;
+  max-height: 140px;
+  object-fit: contain;
 }
 
 /* TOOL NAME */
@@ -120,56 +120,35 @@ logo-card {
   color: #666;
 }
 
-/* WHATSAPP BUTTON */
+/* BUTTON */
 .inquire-btn {
-  margin-top: 10px;
   padding: 10px;
+  margin-top: auto;
   background: #25D366;
-  border: none;
   color: white;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
   width: 100%;
+  transition: 0.2s;
 }
 
 .inquire-btn:hover {
-  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.inquire-btn:active {
+  transform: scale(0.96);
 }
 
 /* CONTACT SECTION */
 .contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 40px;
-
-  background: linear-gradient(
-    to right,
-    #000 30%,
-    #fca311 70%
-  );
-
+  background: linear-gradient(to right, #000 30%, #fca311 70%);
   color: white;
-  font-weight: bold;
-  flex-wrap: wrap;
-}
-
-/* LEFT */
-.contact-left {
-  text-align: left;
-}
-
-/* CENTER */
-.contact-center {
   text-align: center;
-  color: black;
-}
-
-/* RIGHT */
-.contact-right {
-  text-align: right;
-  font-size: 20px;
+  padding: 30px;
+  font-size: 18px;
 }
 
 /* FOOTER */
@@ -177,8 +156,7 @@ footer {
   background: black;
   color: white;
   text-align: center;
-  padding: 10px;
-  font-size: 12px;
+  padding: 15px;
 }
 
 /* NO RESULTS */
