@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { ClerkProvider } from "@clerk/clerk-react";
+
+const PUBLISHABLE_KEY = "pk_test_REAL_KEY_FROM_CLERK";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <App />
-  </React.StrictMode>
+  </ClerkProvider>
 );

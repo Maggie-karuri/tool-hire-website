@@ -1,7 +1,9 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import ToolCard from "./ToolCard";
+import Admin from "./Admin";
 import "./App.css";
+
 
 function App() {
   const [tools, setTools] = useState([]);
@@ -9,14 +11,12 @@ function App() {
   const [category, setCategory] = useState("All");
   const [categories, setCategories] = useState(["All"]);
 
-  // Fetch tools from backend
-  useEffect(() => {
+  const fetchTools = () => {
     fetch("https://elite-hire-backend.onrender.com/api/tools")
       .then(res => res.json())
       .then(data => {
         setTools(data);
 
-        // Handle categories (supports array or string)
         const cats = [
           "All",
           ...new Set(
@@ -30,10 +30,13 @@ function App() {
 
         setCategories(cats);
       })
-      .catch(err => console.error("Error fetching tools:", err));
+      .catch(err => console.error(err));
+  };
+
+  useEffect(() => {
+    fetchTools();
   }, []);
 
-  // Filter tools
   const filteredTools = tools.filter(tool => {
     const matchesSearch = tool.name
       .toLowerCase()
@@ -51,17 +54,31 @@ function App() {
   return (
     <div className="App">
 
-    <header className="header">
-      <div className="logo-card">
-      <img src="/images/logo.jpeg" alt="Elite Hire" className="logo"/>
-      </div>
+      {/* HEADER */}
+      <header className="header">
+        <div className="logo-card">
+          <img src="/images/logo.jpeg" alt="Elite Hire" className="logo" />
+        </div>
 
-      <div className="header-text">
-        <h1>ELITE HIRE</h1>
-        <h2>TOOLS & EQUIPMENT</h2>
-        <p>"Your Trusted Partner for All Project Equipment"</p>
+        <div className="header-text">
+          <h1>ELITE HIRE</h1>
+          <h2>TOOLS & EQUIPMENT</h2>
+          <p>"Your Trusted Partner for All Project Equipment"</p>
+        </div>
+      </header>
+
+      {/* 🔘 ADMIN BUTTON */}
+      <div style={{ textAlign: "right", padding: "10px" }}>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="admin-btn">Admin Login</button>
+          </SignInButton>
+        </SignedOut>
+
+        <SignedIn>
+          <Admin />
+        </SignedIn>
       </div>
-  </header>
 
       {/* SEARCH + FILTER */}
       <section className="controls">
@@ -94,23 +111,23 @@ function App() {
           <p className="no-results">No tools found</p>
         )}
       </section>
-        <section className="contact">
-  <div className="contact-left">
-    📞 Contact Us to Book<br />
-    0727 291 734
-  </div>
 
-  <div className="contact-center">
-    📍 Kangema
-  </div>
+      {/* CONTACT */}
+      <section className="contact">
+        <div className="contact-left">
+          📞 Contact Us to Book<br />
+          0727 291 734
+        </div>
 
-  <div className="contact-right">
-    ELITE HIRENOW
-  </div>
-</section>
+        <div className="contact-center">
+          📍 Kangema
+        </div>
 
+        <div className="contact-right">
+          ELITE HIRENOW
+        </div>
+      </section>
 
-      {/* FOOTER */}
       <footer>
         <p>© 2026 Elite Hire Tools</p>
       </footer>

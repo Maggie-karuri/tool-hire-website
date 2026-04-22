@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ToolCard from "./ToolCard";
 import "./App.css";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 
 function App() {
   const [tools, setTools] = useState([]);
