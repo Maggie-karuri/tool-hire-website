@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
 import ToolCard from "./ToolCard";
 import "./App.css";
@@ -11,18 +10,23 @@ function App() {
   const [categories, setCategories] = useState(["All"]);
 
   // Fetch tools from backend
-  useEffect(() => {
+  const fetchTools = () => {
     fetch("https://elite-hire-backend.onrender.com/api/tools")
       .then(res => res.json())
       .then(data => {
         setTools(data);
+
         const cats = ["All", ...new Set(data.map(tool => tool.category))];
         setCategories(cats);
       })
       .catch(err => console.error("Error fetching tools:", err));
+  };
+
+  useEffect(() => {
+    fetchTools();
   }, []);
 
-  // Filter tools by search & category
+  // Filter tools
   const filteredTools = tools.filter(tool => {
     const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = category === "All" || tool.category === category;
@@ -56,7 +60,13 @@ function App() {
 
       <section className="tools-container">
         {filteredTools.length > 0 ? (
-          filteredTools.map(tool => <ToolCard key={tool.id} tool={tool} />)
+          filteredTools.map(tool => (
+            <ToolCard
+              key={tool.id}
+              tool={tool}
+              refreshTools={fetchTools}
+            />
+          ))
         ) : (
           <p className="no-results">No tools found</p>
         )}

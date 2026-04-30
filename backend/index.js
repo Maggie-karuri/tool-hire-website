@@ -74,7 +74,6 @@ app.post(
 app.delete("/api/tools/:id", requireAuth(), (req, res) => {
   const role = req.auth.sessionClaims?.publicMetadata?.role;
 
-  // 🔒 ONLY ADMINS CAN DELETE
   if (role !== "admin") {
     return res.status(403).json({ error: "Admins only" });
   }

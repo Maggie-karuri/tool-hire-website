@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import ToolCard from "./ToolCard";
-import Admin from "./Admin";
 import "./App.css";
-
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 
 function App() {
   const [tools, setTools] = useState([]);
@@ -11,76 +9,37 @@ function App() {
   const [category, setCategory] = useState("All");
   const [categories, setCategories] = useState(["All"]);
 
+  // Fetch tools from backend
   const fetchTools = () => {
     fetch("https://elite-hire-backend.onrender.com/api/tools")
       .then(res => res.json())
       .then(data => {
         setTools(data);
 
-        const cats = [
-          "All",
-          ...new Set(
-            data.flatMap(tool =>
-              Array.isArray(tool.category)
-                ? tool.category
-                : [tool.category]
-            )
-          )
-        ];
-
+        const cats = ["All", ...new Set(data.map(tool => tool.category))];
         setCategories(cats);
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error("Error fetching tools:", err));
   };
 
   useEffect(() => {
     fetchTools();
   }, []);
 
+  // Filter tools
   const filteredTools = tools.filter(tool => {
-    const matchesSearch = tool.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
-    const matchesCategory =
-      category === "All" ||
-      (Array.isArray(tool.category)
-        ? tool.category.includes(category)
-        : tool.category === category);
-
+    const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = category === "All" || tool.category === category;
     return matchesSearch && matchesCategory;
   });
 
   return (
     <div className="App">
-
-      {/* HEADER */}
-      <header className="header">
-        <div className="logo-card">
-          <img src="/images/logo.jpeg" alt="Elite Hire" className="logo" />
-        </div>
-
-        <div className="header-text">
-          <h1>ELITE HIRE</h1>
-          <h2>TOOLS & EQUIPMENT</h2>
-          <p>"Your Trusted Partner for All Project Equipment"</p>
-        </div>
+      <header>
+        <h1>ELITE HIRE</h1>
+        <p>Your Trusted Partner for Project Equipment</p>
       </header>
 
-      {/* 🔘 ADMIN BUTTON */}
-      <div style={{ textAlign: "right", padding: "10px" }}>
-        <SignedOut>
-          <SignInButton mode="modal">
-            <button className="admin-btn">Admin Login</button>
-          </SignInButton>
-        </SignedOut>
-
-        <SignedIn>
-          <Admin />
-        </SignedIn>
-      </div>
-
-      {/* SEARCH + FILTER */}
       <section className="controls">
         <input
           type="text"
@@ -94,44 +53,34 @@ function App() {
           onChange={(e) => setCategory(e.target.value)}
         >
           {categories.map((cat, index) => (
-            <option key={index} value={cat}>
-              {cat}
-            </option>
+            <option key={index} value={cat}>{cat}</option>
           ))}
         </select>
       </section>
 
-      {/* TOOLS */}
       <section className="tools-container">
         {filteredTools.length > 0 ? (
           filteredTools.map(tool => (
-            <ToolCard key={tool.id} tool={tool} />
+            <ToolCard
+              key={tool.id}
+              tool={tool}
+              refreshTools={fetchTools}
+            />
           ))
         ) : (
           <p className="no-results">No tools found</p>
         )}
       </section>
 
-      {/* CONTACT */}
       <section className="contact">
-        <div className="contact-left">
-          📞 Contact Us to Book<br />
-          0727 291 734
-        </div>
-
-        <div className="contact-center">
-          📍 Kangema
-        </div>
-
-        <div className="contact-right">
-          ELITE HIRENOW
-        </div>
+        <h2>Contact Us to Book</h2>
+        <p>0727 291 734</p>
+        <p>Kangema</p>
       </section>
 
       <footer>
         <p>© 2026 Elite Hire Tools</p>
       </footer>
-
     </div>
   );
 }
