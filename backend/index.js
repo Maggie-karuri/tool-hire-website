@@ -41,9 +41,18 @@ app.get("/api/tools/:category", (req, res) => {
 /*ADMIN ONLY: ADD TOOL (UPLOAD)*/
 app.post(
   "/api/tools",
-  ClerkExpressRequireAuth(),
+  requireAuth(),
   upload.single("image"),
   (req, res) => {
+    const userId = req.auth.userId;
+
+    // 👇 CHECK ADMIN ROLE
+    const role = req.auth.sessionClaims?.publicMetadata?.role;
+
+    if (role !== "admin") {
+      return res.status(403).json({ error: "Admins only" });
+    }
+
     const { name, category, description } = req.body;
 
     const newTool = {
@@ -54,7 +63,7 @@ app.post(
       image: req.file
         ? `https://elite-hire-backend.onrender.com/uploads/${req.file.filename}`
         : null,
-      createdBy: req.auth.userId // 👈 Clerk user ID
+      createdBy: userId
     };
 
     tools.push(newTool);
