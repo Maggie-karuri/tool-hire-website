@@ -5,7 +5,7 @@ const path = require("path");
 const multer = require("multer");
 
 // Clerk import
-const { ClerkExpressRequireAuth } = require("@clerk/express");
+const { clerkMiddleware, requireAuth } = require("@clerk/express");
 
 const app = express();
 
