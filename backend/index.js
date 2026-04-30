@@ -71,6 +71,26 @@ app.post(
     res.json(newTool);
   }
 );
+app.delete("/api/tools/:id", requireAuth(), (req, res) => {
+  const role = req.auth.sessionClaims?.publicMetadata?.role;
+
+  // 🔒 ONLY ADMINS CAN DELETE
+  if (role !== "admin") {
+    return res.status(403).json({ error: "Admins only" });
+  }
+
+  const id = parseInt(req.params.id);
+
+  const index = tools.findIndex(tool => tool.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Tool not found" });
+  }
+
+  tools.splice(index, 1);
+
+  res.json({ message: "Tool deleted successfully" });
+});
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
